@@ -2,8 +2,8 @@
 Tags: post grid, post filter, post category filter, post, category filter
 Contributors: essentialplugin
 Requires at least: 4.0
-Tested up to: 6.8.1
-Stable tag: 1.7.2
+Tested up to: 6.8.3
+Stable tag: 1.7.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -150,6 +150,9 @@ Where designs are : design-1, design-2. You can use same parameter with filter s
 2. Post grid filter view.
 
 == Changelog ==
+
+= 1.7.3 (12, Nov 2025) =
+* [*] Check compatibility with WordPress version 6.8.3
 
 = 1.7.2 (15, May 2025) =
 * [*] Check compatibility with WordPress version 6.8.1

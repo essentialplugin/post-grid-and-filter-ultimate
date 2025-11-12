@@ -1,13 +1,13 @@
 <?php
 /**
  * Plugin Name: Post Grid and Filter Ultimate
- * Plugin URI: https://www.essentialplugin.com/wordpress-plugin/post-grid-filter-ultimate/
+ * Plugin URI: https://essentialplugin.com/wordpress-plugin/post-grid-filter-ultimate/
  * Description: Easy to add and display post grid on your website with or without categoryies filter. Also work with Gutenberg shortcode block. 
  * Author: Essential Plugin
- * Author URI: https://www.essentialplugin.com
+ * Author URI: https://essentialplugin.com
  * Text Domain: post-grid-and-filter-ultimate
  * Domain Path: /languages/
- * Version: 1.7.2
+ * Version: 1.7.3
  *
  * @package Post Grid and Filter Ultimate
  * @author Essential Plugin
@@ -24,48 +24,48 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  */
 
-if( ! defined( 'PGAFU_VERSION' ) ) {
-	define( 'PGAFU_VERSION', '1.7.2' ); // Version of plugin
+if ( ! defined( 'PGAFU_VERSION' ) ) {
+	define( 'PGAFU_VERSION', '1.7.3' ); // Version of plugin
 }
 
-if( ! defined( 'PGAFU_NAME' ) ) {
+if ( ! defined( 'PGAFU_NAME' ) ) {
 	define( 'PGAFU_NAME', 'Post grid and filter ultimate' ); // Version of plugin
 }
 
-if( ! defined( 'PGAFU_DIR' ) ) {
+if ( ! defined( 'PGAFU_DIR' ) ) {
 	define( 'PGAFU_DIR', dirname( __FILE__ ) ); // Plugin dir
 }
 
-if( ! defined( 'PGAFU_URL' ) ) {
+if ( ! defined( 'PGAFU_URL' ) ) {
 	define( 'PGAFU_URL', plugin_dir_url( __FILE__ ) ); // Plugin url
 }
 
-if( ! defined( 'PGAFU_PLUGIN_BASENAME' ) ) {
+if ( ! defined( 'PGAFU_PLUGIN_BASENAME' ) ) {
 	define( 'PGAFU_PLUGIN_BASENAME', plugin_basename( __FILE__ ) ); // Plugin base name
 }
 
-if( ! defined( 'PGAFU_POST_TYPE' ) ) {
+if ( ! defined( 'PGAFU_POST_TYPE' ) ) {
 	define( 'PGAFU_POST_TYPE', 'post' ); // Plugin post type name
 }
 
-if( ! defined( 'PGAFU_CAT' ) ) {
+if ( ! defined( 'PGAFU_CAT' ) ) {
 	define( 'PGAFU_CAT', 'category' ); // Plugin taxonomy name
 }
 
-if( ! defined( 'PGAFU_PLUGIN_BUNDLE_LINK' ) ) {
-	define('PGAFU_PLUGIN_BUNDLE_LINK','https://www.essentialplugin.com/pricing/?utm_source=WP&utm_medium=Post-Grid-and-Filter&utm_campaign=Bundle-Banner'); // Plugin link
+if ( ! defined( 'PGAFU_PLUGIN_BUNDLE_LINK' ) ) {
+	define('PGAFU_PLUGIN_BUNDLE_LINK','https://essentialplugin.com/pricing/?utm_source=WP&utm_medium=Post-Grid-and-Filter&utm_campaign=Bundle-Banner'); // Plugin link
 }
 
-if( ! defined( 'PGAFU_PLUGIN_LINK_UNLOCK' ) ) {
-	define('PGAFU_PLUGIN_LINK_UNLOCK','https://www.essentialplugin.com/pricing/?utm_source=WP&utm_medium=Post-Grid-and-Filter&utm_campaign=Features-PRO'); // Plugin link
+if ( ! defined( 'PGAFU_PLUGIN_LINK_UNLOCK' ) ) {
+	define('PGAFU_PLUGIN_LINK_UNLOCK','https://essentialplugin.com/pricing/?utm_source=WP&utm_medium=Post-Grid-and-Filter&utm_campaign=Features-PRO'); // Plugin link
 }
 
-if( ! defined( 'PGAFU_PLUGIN_LINK_UPGRADE' ) ) {
-	define('PGAFU_PLUGIN_LINK_UPGRADE','https://www.essentialplugin.com/pricing/?utm_source=WP&utm_medium=Post-Grid-and-Filter&utm_campaign=Upgrade-PRO'); // Plugin Check link
+if ( ! defined( 'PGAFU_PLUGIN_LINK_UPGRADE' ) ) {
+	define('PGAFU_PLUGIN_LINK_UPGRADE','https://essentialplugin.com/pricing/?utm_source=WP&utm_medium=Post-Grid-and-Filter&utm_campaign=Upgrade-PRO'); // Plugin Check link
 }
 
-if( ! defined( 'PGAFU_SITE_LINK' ) ) {
-	define('PGAFU_SITE_LINK','https://www.essentialplugin.com'); // Plugin link
+if ( ! defined( 'PGAFU_SITE_LINK' ) ) {
+	define('PGAFU_SITE_LINK','https://essentialplugin.com'); // Plugin link
 }
 
 /**
@@ -141,7 +141,7 @@ function pgafu_install() {
 	flush_rewrite_rules();
 
 	// Deactivate free version
-	if( is_plugin_active('post-grid-and-filter-with-popup-ultimate-pro/post-grid-and-filter-ultimate-pro.php') ){
+	if ( is_plugin_active('post-grid-and-filter-with-popup-ultimate-pro/post-grid-and-filter-ultimate-pro.php') ){
 		add_action('update_option_active_plugins', 'pgafu_deactivate_pro_version');
 	}
 }
@@ -181,14 +181,14 @@ function pgafu_admin_notice() {
 	global $pagenow;
 
 	// If not plugin screen
-	if( 'plugins.php' != $pagenow ) {
+	if ( 'plugins.php' != $pagenow ) {
 		return;
 	}
 
 	// Check Lite Version
 	$dir = WP_PLUGIN_DIR . '/post-grid-and-filter-with-popup-ultimate-pro/post-grid-and-filter-ultimate-pro.php';;
 
-	if( ! file_exists( $dir ) ) {
+	if ( ! file_exists( $dir ) ) {
 		return;
 	}
 
@@ -196,7 +196,7 @@ function pgafu_admin_notice() {
 	$notice_transient   = get_transient( 'pgafu_install_notice' );
 
    	// If free plugin exist
-	if( $notice_transient == false && current_user_can( 'install_plugins' ) ) {
+	if ( $notice_transient == false && current_user_can( 'install_plugins' ) ) {
 			echo '<div class="updated notice" style="position:relative;">
 				<p>
 					<strong>'.sprintf( __('Thank you for activating %s', 'post-grid-and-filter-ultimate'), 'Post Grid and Filter Ultimate').'</strong>.<br/>
