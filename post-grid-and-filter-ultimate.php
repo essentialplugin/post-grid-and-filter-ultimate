@@ -7,7 +7,7 @@
  * Author URI: https://essentialplugin.com
  * Text Domain: post-grid-and-filter-ultimate
  * Domain Path: /languages/
- * Version: 1.7.3
+ * Version: 1.7.4
  *
  * @package Post Grid and Filter Ultimate
  * @author Essential Plugin
@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 
 if ( ! defined( 'PGAFU_VERSION' ) ) {
-	define( 'PGAFU_VERSION', '1.7.3' ); // Version of plugin
+	define( 'PGAFU_VERSION', '1.7.4' ); // Version of plugin
 }
 
 if ( ! defined( 'PGAFU_NAME' ) ) {
